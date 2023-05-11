@@ -30,6 +30,12 @@
     <!-- Plugins css start-->
     <link rel="stylesheet" type="text/css" href="assets/css/datatables.css">
     <!-- Plugins css Ends-->
+     <!-- Plugins css start-->
+     <link rel="stylesheet" type="text/css" href="assets/css/select2.css">
+     <!-- Plugins css Ends-->
+      <!-- Plugins css start datepicker-->
+    <link rel="stylesheet" type="text/css" href="assets/css/date-picker.css">
+    <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <!-- App css-->
@@ -173,6 +179,31 @@
                           <li><a class="nav-link menu-title link-nav" href="datatable-basic-init.html"><i data-feather="user-plus"></i><span>Visitor QR Code Scanner And Report Show</span></a></li>
                           <li><a class="nav-link menu-title link-nav" href="rfid.html"><i data-feather="user-plus"></i><span>RFID Management</span></a></li>
                           <li><a class="nav-link menu-title link-nav" href="ownerview.html"><i data-feather="user-plus"></i><span>Officer (Plot owner) view</span></a></li>
+                          <li>
+                            <a class="nav-link menu-title link-nav" href="received.html">
+                              <i data-feather="user-plus"></i>
+                              <span>Received RFID</span></a >
+                        </li>
+                        <li>
+                            <a
+                                class="nav-link menu-title link-nav"
+                                href="report.html"
+                                ><i data-feather="user-plus"></i
+                                ><span
+                                    >Report</span
+                                ></a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="nav-link menu-title link-nav"
+                                href="turnreport.html"
+                                ><i data-feather="user-plus"></i
+                                ><span
+                                    >Turnstile Report</span
+                                ></a
+                            >
+                        </li>
                          
                           
                           <!--  -->
@@ -187,11 +218,12 @@
       </header>
       <!-- Page Sidebar Ends-->
         <div class="page-body">
+           
           <div class="container-fluid">
             <div class="page-header">
               <div class="row">
                 <div class="col-sm-6">
-                  <h3>Ticket Details</h3>
+                  <h3>Trunstile Activity Log (Report)</h3>
                  
                 </div>
               
@@ -201,123 +233,219 @@
           <!-- Container-fluid starts-->
           <div class="container-fluid">
             <div class="row">
-           
+                <div class="col-sm-12">
+                    <div class="card">
+                      
+                        <div class="card-body">
+                          <form class="needs-validation" novalidate="">
+                            <div class="row g-3">
+                              <div class="col-md-4">
+                                <label class="form-label" ">Name</label>
+                                <input class="form-control"  type="text" placeholder="" required="">
+                                
+                              </div>
+                              
+                              <div class="col-md-4">
+                                <label class="">Select2 </label>
+                                <select class="js-example-basic-single col-sm-12">
+                                  <optgroup label="Developer">
+                                    <option value="AL">Alabama</option>
+                                    <option value="WY">Wyoming</option>
+                                  </optgroup>
+                                  <optgroup label="Designer">
+                                    <option value="WY">Peter</option>
+                                    <option value="WY">Hanry Die</option>
+                                    <option value="WY">John Doe</option>
+                                  </optgroup>
+                                </select>
+                              </div>
+                              <div class="col-md-4">
+                                <label class="form-label" ">Date Range</label>
+                                <input class="datepicker-here form-control digits" type="text" data-range="true" data-multiple-dates-separator=" - " data-language="en">
+                                
+                              </div>
+                            
+                              <div class="col-md-4">
+                                <label class="form-label" ">BA Number</label>
+                                <input class="form-control"  type="text" placeholder="" required="">
+                                
+                              </div>
+                              <div class="col-md-4">
+                                <label class="form-label" ">Rank</label>
+                                <input class="form-control"  type="text" placeholder="" required="">
+                                
+                              </div>
+                              <div class="col-md-4">
+                                <label class="form-label" ">Mobile</label>
+                                <input class="form-control"  type="text" placeholder="" required="">
+                                
+                              </div>
+                            </div>
+                          
+                           <br>
+                            <button class="btn btn-primary" type="submit">Search</button>
+                            <button class="btn btn-danger" type="submit">Clear</button>
+                          </form>
+                        </div>
+                      </div>
+                </div>
               <!-- Feature Unable /Disable Order Starts-->
-              <div class="col-sm-10">
+              <div class="col-sm-12">
                 <div class="card">
                  
-                  <div class="card-body bg-success">
-                    <div class="row details">
-                      <h5 class="col-6"><span>Ser </span></h5>
-                      <h5 class="col-6 ">1 </h5>
-                      <h5 class="col-6"> <span>Customer Name</span></h5>
-                      <h5 class="col-6 ">Major</h5>
-                      <h5 class="col-6"> <span>Mobile Number</span></h5>
-                      <h5 class="col-6 ">0172395780941</h5>
-                      <h5 class="col-6"> <span>Date</span></h5>
-                      <h5 class="col-6 ">21/3/2023</h5>
-                      <h5 class="col-6"> <span>Ticket Number</span></h5>
-                      <h5 class="col-6 ">01</h5>
-                      <h5 class="col-6"> <span>Total Paid</span></h5>
-                      <h5 class="col-6 ">100</h5>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="display" id="basic-2">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                          </tr>
+                          <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                          </tr>
+                          <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                          </tr>
+                          <tr>
+                            <td>Cedric Kelly</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2012/03/29</td>
+                            <td>$433,060</td>
+                          </tr>
+                          <tr>
+                            <td>Airi Satou</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>33</td>
+                            <td>2008/11/28</td>
+                            <td>$162,700</td>
+                          </tr>
+                          <tr>
+                            <td>Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>2012/12/02</td>
+                            <td>$372,000</td>
+                          </tr>
+                          <tr>
+                            <td>Herrod Chandler</td>
+                            <td>Sales Assistant</td>
+                            <td>San Francisco</td>
+                            <td>59</td>
+                            <td>2012/08/06</td>
+                            <td>$137,500</td>
+                          </tr>
+                          <tr>
+                            <td>Rhona Davidson</td>
+                            <td>Integration Specialist</td>
+                            <td>Tokyo</td>
+                            <td>55</td>
+                            <td>2010/10/14</td>
+                            <td>$327,900</td>
+                          </tr>
+                          <tr>
+                            <td>Colleen Hurst</td>
+                            <td>Javascript Developer</td>
+                            <td>San Francisco</td>
+                            <td>39</td>
+                            <td>2009/09/15</td>
+                            <td>$205,500</td>
+                          </tr>
+                          <tr>
+                            <td>Sonya Frost</td>
+                            <td>Software Engineer</td>
+                            <td>Edinburgh</td>
+                            <td>23</td>
+                            <td>2008/12/13</td>
+                            <td>$103,600</td>
+                          </tr>
+                          <tr>
+                            <td>Jena Gaines</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>30</td>
+                            <td>2008/12/19</td>
+                            <td>$90,560</td>
+                          </tr>
+                          <tr>
+                            <td>Quinn Flynn</td>
+                            <td>Support Lead</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2013/03/03</td>
+                            <td>$342,000</td>
+                          </tr>
+                          <tr>
+                            <td>Charde Marshall</td>
+                            <td>Regional Director</td>
+                            <td>San Francisco</td>
+                            <td>36</td>
+                            <td>2008/10/16</td>
+                            <td>$470,600</td>
+                          </tr>
+                          <tr>
+                            <td>Haley Kennedy</td>
+                            <td>Senior Marketing Designer</td>
+                            <td>London</td>
+                            <td>43</td>
+                            <td>2012/12/18</td>
+                            <td>$313,500</td>
+                          </tr>
+                        
+                        
+                        </tbody>
+                     
+                      </table>
                     </div>
-                
                   </div>
                 </div>
               </div>
               <!-- Feature Unable /Disable Ends-->
            
+           
+            
+            
+            
+           
+             
+           
+            
+       
+           
+            
+   
             </div>
           </div>
           <!-- Container-fluid Ends-->
-           <!-- card starts -->
-           <div class="container-fluid">
-            <div class="page-header">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h3>Ticket Details 1</h3>
-                 
-                </div>
-              
-              </div>
-            </div>
-          </div>
-        
-             
-              <div class="col-sm-12 ">
-                <div class="card">
-                  <div class="card-header d-flex justify-content-between align-items-center pb-0">
-                    <h5>Basic Card</h5>
-                    <div class="setting-list">
-                      <ul class="list-unstyled setting-option">
-                     
-                    </div>
-                  </div>
-                  <div class="card-body bg-success">
-                    <div class="row details">
-                      <h5 class="col-6"><span>Ser </span></h5>
-                      <h5 class="col-6 ">1 </h5>
-                      <h5 class="col-6"> <span>Customer Name</span></h5>
-                      <h5 class="col-6 ">Major</h5>
-                      <h5 class="col-6"> <span>Mobile Number</span></h5>
-                      <h5 class="col-6 ">0172395780941</h5>
-                      <h5 class="col-6"> <span>Date</span></h5>
-                      <h5 class="col-6 ">21/3/2023</h5>
-                      <h5 class="col-6"> <span>Ticket Number</span></h5>
-                      <h5 class="col-6 ">01</h5>
-                      <h5 class="col-6"> <span>Total Paid</span></h5>
-                      <h5 class="col-6 ">100</h5>
-                    </div>
-                
-                  </div>
-                </div>
-              </div>
-                  
-               
-            </div>
-          </div>
-           <!-- cards end -->
-           <!-- input field start -->
-           <div class="container-fluid">
-            <div class="page-header">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h3>RFID Number</h3>
-                 
-                </div>
-              
-              </div>
-            </div>
-          </div>
-              <!-- Container-fluid starts-->
-              <div class="container-fluid">
-                <div class="row">
-               
-                  <!-- Feature Unable /Disable Order Starts-->
-                  <div class="col-sm-12">
-                    <div class="card">
-                     
-                      <div class="card-body">
-                        <div >
-                            <label class="form-label" >RFID Number</label>
-                            <input class="form-control"  type="text" placeholder="" required="">
-                        </div>
-                        <div class="modal-footer">
-                            <a href="rfid.html" style="margin-right: 50%;">  <button class="btn btn-primary" type="button" >Assign</button></a>
-                      
-                             
-                            </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Feature Unable /Disable Ends-->
-               
-                </div>
-              </div>
-              <!-- Container-fluid Ends-->
-            <!-- input end -->
         </div>
-       
         <!-- footer start-->
         <footer class="footer">
           <div class="container-fluid">
@@ -344,11 +472,21 @@
     <!-- Bootstrap js-->
     <script src="assets/js/bootstrap/popper.min.js"></script>
     <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+     <!-- Plugins JS start-->
+     <script src="assets/js/select2/select2.full.min.js"></script>
+     <script src="assets/js/select2/select2-custom.js"></script>
+     <!-- Plugins JS Ends-->
     <!-- Plugins JS start-->
     <script src="assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
     <script src="assets/js/datatable/datatables/datatable.custom.js"></script>
     <script src="assets/js/tooltip-init.js"></script>
     <!-- Plugins JS Ends-->
+      <!-- Plugins JS start datepicker-->
+      <script src="assets/js/datepicker/date-picker/datepicker.js"></script>
+      <script src="assets/js/datepicker/date-picker/datepicker.en.js"></script>
+      <script src="assets/js/datepicker/date-picker/datepicker.custom.js"></script>
+      <script src="assets/js/tooltip-init.js"></script>
+      <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="assets/js/script.js"></script>
 
